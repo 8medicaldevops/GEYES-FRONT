@@ -10,7 +10,7 @@ import {
   socialInstagram,
   socialLinkedin,
 } from '../assets'
-import { useRegistration } from './registration/RegistrationProvider'
+import { useAuth } from './auth/AuthProvider'
 
 const contactDetails = [
   { icon: location, text: '13 Odiyan Street, Ikate, Lagos, Nigeria' },
@@ -33,7 +33,7 @@ const socials = [
 ]
 
 export default function Footer() {
-  const { open } = useRegistration()
+  const { openRegister, openSignIn } = useAuth()
   return (
     <footer className="flex w-full flex-col items-center gap-9 bg-footer py-12">
       <div className="w-full max-w-container px-8">
@@ -46,16 +46,16 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center justify-center gap-3">
-              <a
-                href="#"
+              <button
+                onClick={openSignIn}
                 className="flex items-center justify-center gap-1 rounded-lg bg-violet-50 px-4 py-3 text-base font-semibold tracking-tightest text-violet-700 transition-colors hover:bg-white"
               >
                 <img src={arrowLeft} alt="" className="size-4" />
                 Log In
                 <img src={siren} alt="" className="size-4" />
-              </a>
+              </button>
               <button
-                onClick={open}
+                onClick={openRegister}
                 className="flex items-center justify-center gap-1 rounded-lg bg-violet-700 px-4 py-3 text-base font-semibold tracking-tightest text-white transition-colors hover:bg-violet-700/90"
               >
                 Create Account

@@ -1,5 +1,5 @@
 import { logoDark, caretDown } from '../assets'
-import { useRegistration } from './registration/RegistrationProvider'
+import { useAuth } from './auth/AuthProvider'
 
 const navLinks = [
   { label: 'Home' },
@@ -10,7 +10,7 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const { open } = useRegistration()
+  const { openRegister, openSignIn } = useAuth()
   return (
     <header className="relative z-20 w-full bg-white shadow-[0px_1px_2px_rgba(0,0,0,0.15)]">
       <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-6 pb-4 pt-6 md:px-16">
@@ -37,15 +37,15 @@ export default function Navbar() {
 
           <span className="hidden h-5 w-px bg-ink-200 lg:block" />
 
-          <a
-            href="#"
+          <button
+            onClick={openSignIn}
             className="hidden text-sm font-light tracking-tightest text-ink-500 transition-colors hover:text-violet-700 lg:block"
           >
             Log in
-          </a>
+          </button>
 
           <button
-            onClick={open}
+            onClick={openRegister}
             className="rounded-[61px] bg-violet-700 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-700/90"
           >
             Create Account

@@ -17,6 +17,8 @@ export { default as productBlood } from './product-blood.png'
 export { default as iconProfile } from './icon-profile.svg'
 export { default as iconBuildings } from './icon-buildings.svg'
 export { default as iconGoogle } from './icon-google.svg'
+export { default as iconForgotLock } from './icon-forgot-lock.svg'
+export { default as iconOtp } from './icon-otp.svg'
 
 export { default as arrowRightWhite } from './arrow-right-white.svg'
 export { default as arrowLeft } from './arrow-left.svg'
